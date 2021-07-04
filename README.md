@@ -1,4 +1,5 @@
-#Exchange Trace
+Exchange Trace
+
 Modern Crypto Portfolio & Market Explorer. Built with [Flutter](https://github.com/flutter/flutter).  
 Open Source. Lightweight. Clean. Straightforward. Fast. Powerful.
 
