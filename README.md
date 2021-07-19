@@ -86,3 +86,46 @@ Building for iOS works just fine, but I'm not giving Apple $99 to put this on th
 - Set your working directory to the root of your git clone
 - Make sure your Android SDK and Flutter are up to date (`flutter upgrade`)
 - Execute `flutter run`
+
+## my approach
+> flutter pub get
+
+pubspec.yaml has no lower-bound SDK constraint.
+You should edit pubspec.yaml to contain an SDK constraint:
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+See https://dart.dev/go/sdk-constraint
+Running "flutter pub get" in trace...
+pub get failed (65; See https://dart.dev/go/sdk-constraint)
+
+> flutter pub run build_runner build --delete-conflicting-outputs
+> pub get
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Unit731\Desktop\TESTBOX\trace> flutter pub get
+pubspec.yaml has no lower-bound SDK constraint.
+You should edit pubspec.yaml to contain an SDK constraint:
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+See https://dart.dev/go/sdk-constraint
+Running "flutter pub get" in trace...
+pub get failed (65; See https://dart.dev/go/sdk-constraint)
+PS C:\Users\Unit731\Desktop\TESTBOX\trace> flutter pub run build_runner build --delete-conflicting-outputs
+No pubspec.lock file found, please run "pub get" first.
+pub finished with exit code 65
+PS C:\Users\Unit731\Desktop\TESTBOX\trace> pub get
+Resolving dependencies...
+It looks like pub.dartlang.org is having some trouble.
+Pub will wait for a while before trying to connect again.
+Got socket error trying to find package path_provider at https://pub.dartlang.org.       
+PS C:\Users\Unit731\Desktop\TESTBOX\trace> flutter test
+Test directory "test" not found.
+PS C:\Users\Unit731\Desktop\TESTBOX\trace> 
